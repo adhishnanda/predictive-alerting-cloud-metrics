@@ -37,6 +37,9 @@ This produces a supervised dataset:
 
 This formulation allows the use of standard machine learning models for predictive alerting.
 
+# System Architecture
+![Architecture](architecture.png)
+
 ---
 
 # Dataset
@@ -126,14 +129,17 @@ Advantages:
 
 # Hyperparameters
 
-`Window size (W): 20`
-`Prediction horizon (H): 5`
+Window size (W): `20`
+
+Prediction horizon (H): `5`
 
 Train/Test split: 70% / 30% (time-based)
 
-Random Forest:
-`n_estimators = 200`
-`max_depth = 6`
+### Random Forest:
+
+n_estimators = `200`
+
+max_depth = `6`
 
 ---
 
@@ -205,9 +211,11 @@ Threshold = 0.5
 
 ## Metrics:
 
-Precision: 0.705
-Recall: 0.666
-F1 Score: 0.685
+Precision: `0.705`
+
+Recall: `0.666`
+
+F1 Score: `0.685`
 
 This configuration provides a practical trade-off between:
 
@@ -308,3 +316,44 @@ The script will:
 This project demonstrates a practical implementation of predictive alerting for cloud metrics using a sliding-window machine learning approach.
 
 The experiment shows that even simple models can provide useful predictive signals for incident anticipation, especially when combined with proper evaluation and threshold tuning.
+
+---
+
+# Future Improvements
+
+Several improvements could extend this prototype into a production-grade alerting system:
+
+### 1. Multivariate Metrics
+Real cloud monitoring systems use multiple metrics simultaneously
+(CPU, memory, latency, error rates).
+
+### 2. Temporal Models
+Sequence models such as:
+
+- LSTM
+- Temporal Convolution Networks
+- Transformers
+
+could capture longer temporal dependencies.
+
+### 3. Concept Drift Handling
+Cloud workloads change over time. Possible approaches:
+
+- rolling retraining
+- drift detection
+- adaptive thresholds
+
+### 4. Alert Suppression Logic
+Production alerting systems typically implement:
+
+- cooldown periods
+- alert grouping
+- incident deduplication
+
+to reduce alert fatigue.
+
+### 5. Lead-Time Optimization
+Future work could optimize the model specifically for:
+
+- maximizing incident lead-time
+- minimizing false alerts
