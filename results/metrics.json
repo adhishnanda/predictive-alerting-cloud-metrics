@@ -1,0 +1,116 @@
+{
+  "dataset": "NAB cpu_utilization_asg_misconfiguration.csv",
+  "window_size": 20,
+  "horizon": 5,
+  "incident_threshold": 100.0,
+  "train_samples": 12610,
+  "test_samples": 5390,
+  "positive_rate_train": 0.08231562252180809,
+  "positive_rate_test": 0.1974025974025974,
+  "logistic_regression": {
+    "roc_auc": 0.8186168437737895,
+    "threshold_results": [
+      {
+        "threshold": 0.3,
+        "precision": 0.59,
+        "recall": 0.7208646616541353,
+        "f1": 0.6489001692047377,
+        "confusion_matrix": [
+          [
+            3793,
+            533
+          ],
+          [
+            297,
+            767
+          ]
+        ]
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.6676923076923077,
+        "recall": 0.6118421052631579,
+        "f1": 0.6385483079941148,
+        "confusion_matrix": [
+          [
+            4002,
+            324
+          ],
+          [
+            413,
+            651
+          ]
+        ]
+      },
+      {
+        "threshold": 0.7,
+        "precision": 0.6828675577156743,
+        "recall": 0.5281954887218046,
+        "f1": 0.5956544780074192,
+        "confusion_matrix": [
+          [
+            4065,
+            261
+          ],
+          [
+            502,
+            562
+          ]
+        ]
+      }
+    ]
+  },
+  "random_forest": {
+    "roc_auc": 0.8403513551562678,
+    "threshold_results": [
+      {
+        "threshold": 0.3,
+        "precision": 0.5560439560439561,
+        "recall": 0.7133458646616542,
+        "f1": 0.6249485384932071,
+        "confusion_matrix": [
+          [
+            3720,
+            606
+          ],
+          [
+            305,
+            759
+          ]
+        ]
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.7054726368159204,
+        "recall": 0.6663533834586466,
+        "f1": 0.6853552440792653,
+        "confusion_matrix": [
+          [
+            4030,
+            296
+          ],
+          [
+            355,
+            709
+          ]
+        ]
+      },
+      {
+        "threshold": 0.7,
+        "precision": 0.7289473684210527,
+        "recall": 0.26033834586466165,
+        "f1": 0.38365650969529086,
+        "confusion_matrix": [
+          [
+            4223,
+            103
+          ],
+          [
+            787,
+            277
+          ]
+        ]
+      }
+    ]
+  }
+}
