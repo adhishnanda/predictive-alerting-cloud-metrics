@@ -38,7 +38,7 @@ This produces a supervised dataset:
 This formulation allows the use of standard machine learning models for predictive alerting.
 
 # System Architecture
-![src](architecture.png)
+![Architecture](architecture.png)
 
 ---
 
